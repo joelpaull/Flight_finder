@@ -1,0 +1,35 @@
+/* Size for Logo */
+nav .navbar-brand
+{
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Colors for Logo */
+.blue
+{
+    color: #2563f4;
+    padding-left: 20px;
+}
+
+/* Navbar */ 
+.navbar-nav
+{
+    padding-right: 50px;
+}   
+.nav-link
+{
+    color: #f42525;
+}   
+
+.nav-link:hover
+{
+    color: #3625f4;
+}
+
+img {
+    display: block;
+    width: 4%;
+
+  }
+

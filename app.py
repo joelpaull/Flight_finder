@@ -3,7 +3,7 @@ import requests
 import sqlite3
 from flask import Flask, redirect, render_template
 import os.path
-from user_manager import UserManager
+from helpers.user_manager import UserManager
 
 
 # Configure Flask 
@@ -15,8 +15,9 @@ DB_PATH = os.path.join(BASE_DIR, "flights.sqlite")
 
 # Create user_manager object
 user_manager = UserManager()
-user_manager.add_user("wfw","wef", DB_PATH)
+# user_manager.add_user("joel","joel", DB_PATH)
 current_user = ""
+logged_in = False
 
 
 @app.route("/")

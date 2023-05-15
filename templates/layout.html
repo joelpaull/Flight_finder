@@ -24,12 +24,23 @@
                 </button>
             
                 <!-- Navbar -->
+                {% if not logged_in %}
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                      <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                
+                </div>
+
+                {% else %}
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                       <li class="nav-item"><a class="nav-link" href="/">My Flights</a></li>
                       <li class="nav-item"><a class="nav-link" href="/">Add Flight</a></li>
                       <li class="nav-item"><a class="nav-link" href="/">My Details</a></li>
                 </div>
+
+                {% endif%}
         </div>
     </nav>
 

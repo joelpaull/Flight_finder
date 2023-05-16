@@ -19,7 +19,7 @@ nav .navbar-brand
 /* Navbar */ 
 .navbar-nav
 {
-    padding-right: 50px;
+    padding-right: 40px;
 }   
 .nav-link
 {
@@ -35,7 +35,28 @@ nav .navbar-brand
 img {
     display: block;
     width: 4%;
-  }
+}
+
+/* Login/Register pages */
+.btn-primary {
+    background-color:black;
+    color: #15a4ec;
+    border: none;
+}
+.btn-primary:hover {
+    background-color:#15a4ec;
+    color: black;
+    border: none;
+}
+
+.register_details {
+    text-align: center;
+    size: medium;
+    color: #15a4ec;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 
 
 

@@ -18,7 +18,7 @@ class UserManager():
     
 
     def add_user(self, username, password, db_path):
-        ''' Add user'''
+        ''' Add user, returns false is username taken'''
         with sqlite3.connect(db_path) as db:
             try:
                 db.execute("INSERT INTO user (username, password) VALUES (?, ?)", (username, password))

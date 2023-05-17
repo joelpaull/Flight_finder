@@ -45,7 +45,7 @@ def login():
         # if username in database and password matches, log user in
         if valid_user:
             session["username"] = username
-            return render_template("/homepage")
+            return render_template("homepage.html")
         else:
             # TODO
             return render_template("error.html")
@@ -64,23 +64,34 @@ def register():
         password = request.form.get("password")
         pass_confirmation = request.form.get("confirmation")
 
-        # Check passwords match and add to database 
+        # Check username not taken & passwords match. Then add to database 
         if password == pass_confirmation:
-            user_added = user_manager.add_user(username, password, DB_PATH)
+                
+                # user_added returns False if username taken.
+                user_added = user_manager.add_user(username, password, DB_PATH)
+                if user_added:
+                     return render_template("register_success.html", username = username)
+                else:
+                    error = "Username Taken."
+                    return render_template("error.html", error = error)
         else:
-            error = "Sorry, Passwords Do Not Match."
-            render_template("error.html", error = error)
-
-        # Show result of user addition
-        if user_added:
-            render_template("register_success.html", username = username)
-        else:
-            # TODO
-            error = "Username Taken."
+            error = "Passwords Do Not Match."
             return render_template("error.html", error = error)
         
 
+@app.route("/logout")
+def logout():
+    '''Log user out'''
+
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return redirect("/")
+        
+
 @app.route("/homepage")
+@login_required
 def homepage():
     return render_template("homepage.html")
 

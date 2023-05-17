@@ -51,10 +51,11 @@ img {
 
 .register_details {
     text-align: center;
-    size: medium;
+    font-size: x-large;
     color: #15a4ec;
     margin-top: 40px;
     margin-bottom: 40px;
+
 }
 
 

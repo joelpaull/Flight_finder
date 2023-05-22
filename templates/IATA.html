@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/iata" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="name" name="name" placeholder="Airport/City" type="text" autocomplete="off">
+        </div>
+        <button class="btn btn-primary" type="submit">Find IATA</button>
+    </form>
+{% endblock %}
